@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input, button {
+  outline: none;
+  border: none;
+}
+
+@mixin fontProp($family, $weight, $size, $color: #fff) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color !important;
+}
+
+.navigation {
+  padding: 24px 69px;
+  background-color: #121212;
+
+  .cur-logo {
+    @include fontProp('Montserrat', 700, 32px);
+  }
+}
+
+.s-body {
+  padding: 32px 69px 0 69px;
+  
+  .input-wrapper {
+    max-width: 400px;
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    
+    .input-container {
+      
+      input {
+        width: 100%;
+        padding: 8px 12px;
+        @include fontProp('Montserrat', 400, 18px, #000);
+        max-width: 150px;
+        border-radius: 8px;
+
+        &:focus {
+          border: solid 2px rgb(62, 59, 238);
+        }
+      }
+    }
+  }
+
+  .add-number {
+    margin-top: 32px;
+    padding: 12px 24px;
+    background-color: rgb(62, 59, 238);
+    border-radius: 8px;
+    transition: 0.1s ease-in;
+    @include fontProp('Rubik', 600, 16px, #fff);
+
+    &:hover {
+      background-color: rgb(41, 39, 163);
+    }
+  }
+
+  .result {
+    @include fontProp('Montserrat', 500, 24px);
+  }
+}
